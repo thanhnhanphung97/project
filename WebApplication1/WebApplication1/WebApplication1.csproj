@@ -543,13 +543,11 @@
     <Content Include="Scripts\ytprefs.min.js" />
     <Content Include="Scripts\recaptcha__en.js" />
     <Content Include="Views\Product\Index.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Home\Create.cshtml" />
     <Content Include="Views\Home\Delete.cshtml" />
-    <Content Include="Views\Home\List.cshtml" />
     <Content Include="Views\Product\Index.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\List.cshtml" />
     <Content Include="Views\Home\Create.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
