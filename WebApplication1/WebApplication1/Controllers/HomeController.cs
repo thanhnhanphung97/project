@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
+using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using WebApplication1.Models;
@@ -21,11 +23,6 @@ namespace WebApplication1.Controllers
             //View(b.ToList());
             return View();
         }
-        
-        public ActionResult List()
-        {
-            return View();
-        }
 
         public ActionResult Create()
         {
@@ -35,18 +32,6 @@ namespace WebApplication1.Controllers
         [HttpPost]
         public ActionResult Create(introduce new_introduce)
         {
-
-            /*if (ModelState.IsValid)
-            {
-                db.AddToIntroduces(new_introduce);
-                db.SaveChanges();
-
-                return RedirectToAction("Index");
-            }
-            else
-            {
-                return View(new_introduce);
-            }*/
             try
             {
                 if (ModelState.IsValid)
@@ -54,7 +39,7 @@ namespace WebApplication1.Controllers
                     db.introduces.Add(new_introduce);
                     db.SaveChanges();
 
-                    return RedirectToAction("List");
+                    return RedirectToAction("Index");
                 }
                 else
                 {
@@ -67,10 +52,70 @@ namespace WebApplication1.Controllers
             }
         }
 
-        public ActionResult Delete()
+        public ActionResult Delete(int? id)
         {
-            return View();
+            if(id==null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            introduce introduce = db.introduces.Find(id);
+            if(introduce==null)
+            {
+                return HttpNotFound();
+            }
+            return View(introduce);
         }
 
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteConfirmed(int id)
+        {
+            introduce introduce = db.introduces.Find(id);
+            db.introduces.Remove(introduce);
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
+        public ActionResult Details(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            introduce introduce = db.introduces.Find(id);
+
+            if (introduce == null)
+            {
+                return HttpNotFound();
+            }
+            return View(introduce);
+        }
+
+        public ActionResult Edit(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            introduce introduce = db.introduces.Find(id);
+            if (introduce == null)
+            {
+                return HttpNotFound();
+            }
+            return View(introduce);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(introduce introduce)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Entry(introduce).State = EntityState.Modified;
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            return View(introduce);
+        }
     }
 }
