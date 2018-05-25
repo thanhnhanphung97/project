@@ -1,0 +1,301 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="dataModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Accounts">
+          <Key>
+            <PropertyRef Name="UserName" />
+          </Key>
+          <Property Name="UserName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Password" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="contact">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="company" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="email" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="subject" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="message" Type="nvarchar" MaxLength="1000" Nullable="false" />
+        </EntityType>
+        <EntityType Name="introduces">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="100" />
+          <Property Name="img" Type="nvarchar" MaxLength="100" />
+          <Property Name="data" Type="float" />
+          <Property Name="describe" Type="nvarchar" MaxLength="500" />
+          <Property Name="color" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="ListPro">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idList" Type="int" Nullable="false" />
+          <Property Name="doc" Type="nvarchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="news">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="100" />
+          <Property Name="imgmota" Type="nvarchar" MaxLength="100" />
+          <Property Name="imgchitiet" Type="nvarchar" MaxLength="100" />
+          <Property Name="describe" Type="nvarchar" MaxLength="500" />
+          <Property Name="link" Type="nvarchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="partners">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="100" />
+          <Property Name="img" Type="nvarchar" MaxLength="100" />
+          <Property Name="describe" Type="nvarchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="Products">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idList" Type="int" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="doc" Type="nvarchar" MaxLength="1000" Nullable="false" />
+          <Property Name="img" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_ListPro_Products">
+          <End Role="Products" Type="Self.Products" Multiplicity="1" />
+          <End Role="ListPro" Type="Self.ListPro" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Products">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="ListPro">
+              <PropertyRef Name="idList" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="dataModelStoreContainer">
+          <EntitySet Name="Accounts" EntityType="Self.Accounts" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="contact" EntityType="Self.contact" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="introduces" EntityType="Self.introduces" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ListPro" EntityType="Self.ListPro" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="news" EntityType="Self.news" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="partners" EntityType="Self.partners" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Products" EntityType="Self.Products" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_ListPro_Products" Association="Self.FK_ListPro_Products">
+            <End Role="Products" EntitySet="Products" />
+            <End Role="ListPro" EntitySet="ListPro" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="dataModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="contact">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="company" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="subject" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="message" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ListPro">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idList" Type="Int32" Nullable="false" />
+          <Property Name="doc" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Product" Relationship="Self.FK_ListPro_Products" FromRole="ListPro" ToRole="Products" />
+        </EntityType>
+        <EntityType Name="news">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="imgmota" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="imgchitiet" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="describe" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="link" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="partner">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="img" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="describe" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Product">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idList" Type="Int32" Nullable="false" />
+          <Property Name="name" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="doc" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="ListProes" Relationship="Self.FK_ListPro_Products" FromRole="Products" ToRole="ListPro" />
+          <Property Name="img" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <Association Name="FK_ListPro_Products">
+          <End Role="Products" Type="Self.Product" Multiplicity="1" />
+          <End Role="ListPro" Type="Self.ListPro" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Products">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="ListPro">
+              <PropertyRef Name="idList" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="dataEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="contacts" EntityType="Self.contact" />
+          <EntitySet Name="ListProes" EntityType="Self.ListPro" />
+          <EntitySet Name="news" EntityType="Self.news" />
+          <EntitySet Name="partners" EntityType="Self.partner" />
+          <EntitySet Name="Products" EntityType="Self.Product" />
+          <AssociationSet Name="FK_ListPro_Products" Association="Self.FK_ListPro_Products">
+            <End Role="Products" EntitySet="Products" />
+            <End Role="ListPro" EntitySet="ListProes" />
+          </AssociationSet>
+          <EntitySet Name="introduces" EntityType="dataModel.introduce" />
+          <EntitySet Name="Accounts" EntityType="dataModel.Account" />
+        </EntityContainer>
+        <EntityType Name="introduce">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="img" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="data" Type="Double" />
+          <Property Name="describe" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="color" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Account">
+          <Key>
+            <PropertyRef Name="UserName" />
+          </Key>
+          <Property Name="UserName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Password" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="dataModelStoreContainer" CdmEntityContainer="dataEntities">
+          <EntitySetMapping Name="contacts">
+            <EntityTypeMapping TypeName="dataModel.contact">
+              <MappingFragment StoreEntitySet="contact">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="company" ColumnName="company" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="subject" ColumnName="subject" />
+                <ScalarProperty Name="message" ColumnName="message" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ListProes">
+            <EntityTypeMapping TypeName="dataModel.ListPro">
+              <MappingFragment StoreEntitySet="ListPro">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="idList" ColumnName="idList" />
+                <ScalarProperty Name="doc" ColumnName="doc" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="news">
+            <EntityTypeMapping TypeName="dataModel.news">
+              <MappingFragment StoreEntitySet="news">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="imgmota" ColumnName="imgmota" />
+                <ScalarProperty Name="imgchitiet" ColumnName="imgchitiet" />
+                <ScalarProperty Name="describe" ColumnName="describe" />
+                <ScalarProperty Name="link" ColumnName="link" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="partners">
+            <EntityTypeMapping TypeName="dataModel.partner">
+              <MappingFragment StoreEntitySet="partners">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="img" ColumnName="img" />
+                <ScalarProperty Name="describe" ColumnName="describe" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Products">
+            <EntityTypeMapping TypeName="dataModel.Product">
+              <MappingFragment StoreEntitySet="Products">
+                <ScalarProperty Name="img" ColumnName="img" />
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="idList" ColumnName="idList" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="doc" ColumnName="doc" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="introduces">
+            <EntityTypeMapping TypeName="dataModel.introduce">
+              <MappingFragment StoreEntitySet="introduces">
+                <ScalarProperty Name="color" ColumnName="color" />
+                <ScalarProperty Name="describe" ColumnName="describe" />
+                <ScalarProperty Name="data" ColumnName="data" />
+                <ScalarProperty Name="img" ColumnName="img" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Accounts">
+            <EntityTypeMapping TypeName="dataModel.Account">
+              <MappingFragment StoreEntitySet="Accounts">
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

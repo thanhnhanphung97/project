@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="dataModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Accounts">
+    <Key>
+      <PropertyRef Name="UserName" />
+    </Key>
+    <Property Name="UserName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Password" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="contact">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="company" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="email" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="subject" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="message" Type="nvarchar" MaxLength="1000" Nullable="false" />
+  </EntityType>
+  <EntityType Name="introduces">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="100" />
+    <Property Name="img" Type="nvarchar" MaxLength="100" />
+    <Property Name="data" Type="float" />
+    <Property Name="describe" Type="nvarchar" MaxLength="500" />
+    <Property Name="color" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="ListPro">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="idList" Type="int" Nullable="false" />
+    <Property Name="doc" Type="nvarchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="news">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="100" />
+    <Property Name="imgmota" Type="nvarchar" MaxLength="100" />
+    <Property Name="imgchitiet" Type="nvarchar" MaxLength="100" />
+    <Property Name="describe" Type="nvarchar" MaxLength="500" />
+    <Property Name="link" Type="nvarchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="partners">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="100" />
+    <Property Name="img" Type="nvarchar" MaxLength="100" />
+    <Property Name="describe" Type="nvarchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="Products">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="idList" Type="int" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="doc" Type="nvarchar" MaxLength="1000" Nullable="false" />
+    <Property Name="img" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_ListPro_Products">
+    <End Role="Products" Type="Self.Products" Multiplicity="1" />
+    <End Role="ListPro" Type="Self.ListPro" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Products">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="ListPro">
+        <PropertyRef Name="idList" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="dataModelStoreContainer">
+    <EntitySet Name="Accounts" EntityType="Self.Accounts" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="contact" EntityType="Self.contact" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="introduces" EntityType="Self.introduces" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ListPro" EntityType="Self.ListPro" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="news" EntityType="Self.news" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="partners" EntityType="Self.partners" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Products" EntityType="Self.Products" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_ListPro_Products" Association="Self.FK_ListPro_Products">
+      <End Role="Products" EntitySet="Products" />
+      <End Role="ListPro" EntitySet="ListPro" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

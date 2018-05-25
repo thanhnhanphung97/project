@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="dataModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="contact">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="company" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="subject" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="message" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ListPro">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="idList" Type="Int32" Nullable="false" />
+    <Property Name="doc" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Product" Relationship="Self.FK_ListPro_Products" FromRole="ListPro" ToRole="Products" />
+  </EntityType>
+  <EntityType Name="news">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="imgmota" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="imgchitiet" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="describe" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="link" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="partner">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="img" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="describe" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Product">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="idList" Type="Int32" Nullable="false" />
+    <Property Name="name" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="doc" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="ListProes" Relationship="Self.FK_ListPro_Products" FromRole="Products" ToRole="ListPro" />
+    <Property Name="img" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <Association Name="FK_ListPro_Products">
+    <End Role="Products" Type="Self.Product" Multiplicity="1" />
+    <End Role="ListPro" Type="Self.ListPro" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Products">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="ListPro">
+        <PropertyRef Name="idList" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="dataEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="contacts" EntityType="Self.contact" />
+    <EntitySet Name="ListProes" EntityType="Self.ListPro" />
+    <EntitySet Name="news" EntityType="Self.news" />
+    <EntitySet Name="partners" EntityType="Self.partner" />
+    <EntitySet Name="Products" EntityType="Self.Product" />
+    <AssociationSet Name="FK_ListPro_Products" Association="Self.FK_ListPro_Products">
+      <End Role="Products" EntitySet="Products" />
+      <End Role="ListPro" EntitySet="ListProes" />
+    </AssociationSet>
+    <EntitySet Name="introduces" EntityType="dataModel.introduce" />
+    <EntitySet Name="Accounts" EntityType="dataModel.Account" />
+  </EntityContainer>
+  <EntityType Name="introduce">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="img" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="data" Type="Double" />
+    <Property Name="describe" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="color" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Account">
+    <Key>
+      <PropertyRef Name="UserName" />
+    </Key>
+    <Property Name="UserName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Password" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+</Schema>

@@ -1,0 +1,57 @@
+﻿@model IEnumerable<WebApplication1.Models.introduce>
+
+<p>
+    
+</p>
+
+@*<table class="table">
+
+        <tr>
+            @foreach (var item in Model)
+            {
+                <td>
+                    @{String img = "/Images/" + @item.img;}
+                    <img src=@img alt="" />
+                </td>
+            }
+        </tr>
+        <tr>
+            @foreach (var item in Model)
+            {
+                <td>
+                    @Html.DisplayFor(modelItem => item.data)
+                </td>
+            }
+        </tr>
+        <tr>
+            @foreach (var item in Model)
+            {
+                <td>
+                    @Html.DisplayFor(modelItem => item.describe)
+                </td>
+            }
+        </tr>
+    </table>*@
+
+
+<div>
+    @foreach (var item in Model)
+    {
+        String color = "text-align:center;" + "background-color:" + item.color + ";";
+        <div style=@color>
+            <div>
+                @{String img = "/Images/" + item.img;}
+                <img src=@img alt="" />
+            </div>
+            <div style="color:white;">
+                <div style="font-size:60px;font-weight:bold;">
+                    @item.data<br />
+                </div>
+                <div style="font-size:20px;">
+                    @item.describe
+                </div>
+            </div>
+        </div>
+    }
+</div>
+
