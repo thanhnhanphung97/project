@@ -157,13 +157,19 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Code\SessionHelper.cs" />
+    <Compile Include="Areas\Admin\Code\UserSession.cs" />
+    <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ListProesController.cs" />
     <Compile Include="Areas\Admin\Controllers\LoginController.cs" />
+    <Compile Include="Areas\Admin\Controllers\newsController.cs" />
     <Compile Include="Areas\Admin\Controllers\ProductsController.cs" />
+    <Compile Include="Areas\Admin\Models\LoginModel.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Models\Account.cs">
       <DependentUpon>data.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\AccountModel.cs" />
     <Compile Include="Models\contact.cs">
       <DependentUpon>data.tt</DependentUpon>
     </Compile>
@@ -500,8 +506,20 @@
     <Content Include="Areas\Admin\Assets\vendor\font-awesome\scss\_stacked.scss" />
     <Content Include="Areas\Admin\Assets\vendor\font-awesome\scss\_variables.scss" />
     <Content Include="Areas\Admin\Views\Shared\_Layout.cshtml" />
-    <Content Include="Areas\Admin\Views\Products\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Products\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Products\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Products\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Products\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Login\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\ListProes\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\ListProes\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\ListProes\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\ListProes\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Home\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\news\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\news\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\news\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\news\Index.cshtml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -542,9 +560,7 @@
     <Content Include="Scripts\wp-emoji-release.min.js" />
     <Content Include="Scripts\ytprefs.min.js" />
     <Content Include="Scripts\recaptcha__en.js" />
-    <Content Include="Views\Product\Index.cshtml" />
     <Content Include="Views\Home\Delete.cshtml" />
-    <Content Include="Views\Product\Index.cshtml" />
     <Content Include="Views\Home\Create.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\Edit.cshtml" />
@@ -552,8 +568,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Areas\Admin\Models\" />
-    <Folder Include="Areas\Admin\Views\Home\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

@@ -14,20 +14,26 @@ namespace WebApplication1.Models
 
 using System;
     using System.Collections.Generic;
-    
-public partial class news
+    using System.ComponentModel;
+    using System.ComponentModel.DataAnnotations;
+
+    public partial class news
 {
 
     public int id { get; set; }
-
+    [StringLength(200)]
+    [DisplayName("Tittle")]
     public string name { get; set; }
-
+    [StringLength(100)]
+    [DisplayName("Images")]
     public string imgmota { get; set; }
-
+    [DisplayName("Images-Cop")]
     public string imgchitiet { get; set; }
-
+     [StringLength(3000)]
+    [DisplayName("Data")]
     public string describe { get; set; }
-
+    [StringLength(200)]
+    [DisplayName("Link")]
     public string link { get; set; }
 
 }

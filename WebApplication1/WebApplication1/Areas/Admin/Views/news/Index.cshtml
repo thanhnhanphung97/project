@@ -1,0 +1,59 @@
+﻿@model IEnumerable<WebApplication1.Models.news>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            <div style="width: 150px;">@Html.DisplayNameFor(model => model.name)</div>
+        </th>
+        <th>
+            <div style="width: 200px;">@Html.DisplayNameFor(model => model.imgmota)</div>
+        </th>
+        <th >
+            <div style="width: 400px;">@Html.DisplayNameFor(model => model.describe)</div>
+        </th>
+        <th >
+            <div>@Html.DisplayNameFor(model => model.link)</div>
+        </th>
+        <th><div style="width:150px;"></div></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            <div style="width: 150px;">@Html.DisplayFor(modelItem => item.name)</div>
+        </td>
+        <td>
+            <div style="width: 200px;">
+                @{ String img = "/Images/" + item.imgmota;}
+                <img src=@img alt="" style=" width:180px; height:90px;" />
+            </div>
+        </td>
+        <td>
+            <div style="width: 400px;">@Html.DisplayFor(modelItem => item.describe)</div>
+        </td>
+        <td>
+            <div>
+                @{ String s = item.link;}
+                @Html.ActionLink(s,null);
+            </div>
+        </td>
+        <td>
+            <div >
+                @Html.ActionLink("Edit", "Edit", new { id = item.id }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.id })
+                </div>
+        </td>
+    </tr>
+}
+
+</table>

@@ -12,16 +12,16 @@
 </p>
 <table class="table">
     <tr>
-        <th>
+        <th style="width: 80px;">
             @Html.DisplayNameFor(model => model.idList)
         </th>
-        <th>
+        <th style="width: 120px;">
             @Html.DisplayNameFor(model => model.name)
         </th>
-        <th>
+        <th style="width: 450px;">
             @Html.DisplayNameFor(model => model.doc)
         </th>
-        <th>
+        <th style="width: 250px;">
             @Html.DisplayNameFor(model => model.img)
         </th>
         <th></th>
@@ -39,11 +39,11 @@
             @Html.DisplayFor(modelItem => item.doc)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.img)
+            @{ String img = "/Images/" + item.img; }
+            <div> <img src=@img  alt="" style=" width:180px; height:90px;"/> </div>
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.id }) |
             @Html.ActionLink("Delete", "Delete", new { id=item.id })
         </td>
     </tr>

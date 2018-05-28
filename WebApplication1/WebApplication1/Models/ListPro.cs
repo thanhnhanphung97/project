@@ -14,14 +14,16 @@ namespace WebApplication1.Models
 
 using System;
     using System.Collections.Generic;
-    
-public partial class ListPro
+    using System.ComponentModel;
+
+    public partial class ListPro
 {
 
     public int id { get; set; }
-
+    
+    [DisplayName("Products")]
     public int idList { get; set; }
-
+    [DisplayName("Data")]
     public string doc { get; set; }
 
 

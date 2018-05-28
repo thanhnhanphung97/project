@@ -17,11 +17,11 @@ namespace WebApplication1.Controllers
         {
             var a = from i in db.introduces
                     select i;
-            var b = from i in db.news
-                    select i;
-            View(a.ToList());
+            //var b = from i in db.news
+            //        select i;
+            //View(a.ToList());
             //View(b.ToList());
-            return View();
+            return View(a.ToList());
         }
 
         public ActionResult Create()
