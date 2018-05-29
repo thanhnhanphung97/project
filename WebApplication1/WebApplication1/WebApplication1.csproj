@@ -160,12 +160,14 @@
     <Compile Include="Areas\Admin\Code\SessionHelper.cs" />
     <Compile Include="Areas\Admin\Code\UserSession.cs" />
     <Compile Include="Areas\Admin\Controllers\HomeAdminController.cs" />
+    <Compile Include="Areas\Admin\Controllers\IntroducesAdminController.cs" />
     <Compile Include="Areas\Admin\Controllers\ListProesController.cs" />
     <Compile Include="Areas\Admin\Controllers\LoginController.cs" />
-    <Compile Include="Areas\Admin\Controllers\newsController.cs" />
+    <Compile Include="Areas\Admin\Controllers\newsAdminController.cs" />
     <Compile Include="Areas\Admin\Controllers\ProductsController.cs" />
     <Compile Include="Areas\Admin\Models\LoginModel.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\newsController.cs" />
     <Compile Include="Models\Account.cs">
       <DependentUpon>data.tt</DependentUpon>
     </Compile>
@@ -333,6 +335,8 @@
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Images\09_corpcards_christopher-hecht-2.jpg" />
+    <Content Include="Images\168308824.jpg" />
+    <Content Include="Images\9JubX7DwOsA.html" />
     <Content Include="Images\accounting.png" />
     <Content Include="Images\airbnb-1.png" />
     <Content Include="Images\airbnb.png" />
@@ -396,6 +400,7 @@
     <Content Include="Images\visa.png" />
     <Content Include="Images\voya.png" />
     <Content Include="Images\wirecard.png" />
+    <Content Include="Images\www-player-webp-vfldczJwu.css" />
     <Content Include="Images\ytprefs.min.css" />
     <Content Include="Models\data.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -516,13 +521,24 @@
     <Content Include="Areas\Admin\Views\ListProes\Delete.cshtml" />
     <Content Include="Areas\Admin\Views\ListProes\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\ListProes\Index.cshtml" />
-    <Content Include="Areas\Admin\Views\news\Create.cshtml" />
-    <Content Include="Areas\Admin\Views\news\Delete.cshtml" />
-    <Content Include="Areas\Admin\Views\news\Edit.cshtml" />
-    <Content Include="Areas\Admin\Views\news\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\newsAdmin\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\newsAdmin\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\newsAdmin\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\newsAdmin\Index.cshtml" />
     <Content Include="Areas\Admin\Views\HomeAdmin\Index.cshtml" />
     <Content Include="Images\comment-reply.min.js.tải xuống" />
     <Content Include="Images\front.min.js.tải xuống" />
+    <Content Include="Images\ad_status.js.tải xuống" />
+    <Content Include="Images\base.js.tải xuống" />
+    <Content Include="Images\MgaOaFuzNRitgJev3pjUPCLRunxfo7J18TtCmzrnOHc.js.tải xuống" />
+    <Content Include="Images\remote.js.tải xuống" />
+    <Content Include="Images\www-embed-player.js.tải xuống" />
+    <Content Include="Areas\Admin\Views\IntroducesAdmin\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\IntroducesAdmin\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\IntroducesAdmin\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\IntroducesAdmin\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\IntroducesAdmin\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\newsAdmin\Details.cshtml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -563,11 +579,9 @@
     <Content Include="Scripts\wp-emoji-release.min.js" />
     <Content Include="Scripts\ytprefs.min.js" />
     <Content Include="Scripts\recaptcha__en.js" />
-    <Content Include="Views\Home\Delete.cshtml" />
-    <Content Include="Views\Home\Create.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Home\Edit.cshtml" />
     <Content Include="Views\Home\Details.cshtml" />
+    <Content Include="Views\news\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
