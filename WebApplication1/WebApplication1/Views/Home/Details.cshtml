@@ -13,7 +13,7 @@
         <img src=@img alt="" height="700" width="1000" />
     </div>
     <div style="color:dimgray;">
-        @Html.DisplayFor(model => model.describe)
+        @Html.Raw(@Model.describe)
     </div>
     <div>
         @if (Model.link != "null")
