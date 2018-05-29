@@ -36,8 +36,6 @@ public partial class dataEntities : DbContext
 
     public virtual DbSet<ListPro> ListProes { get; set; }
 
-    public virtual DbSet<news> news { get; set; }
-
     public virtual DbSet<partner> partners { get; set; }
 
     public virtual DbSet<Product> Products { get; set; }
@@ -45,6 +43,8 @@ public partial class dataEntities : DbContext
     public virtual DbSet<introduce> introduces { get; set; }
 
     public virtual DbSet<Account> Accounts { get; set; }
+
+    public virtual DbSet<news> news { get; set; }
 
 }
 

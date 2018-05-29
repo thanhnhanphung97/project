@@ -159,7 +159,7 @@
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Code\SessionHelper.cs" />
     <Compile Include="Areas\Admin\Code\UserSession.cs" />
-    <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
+    <Compile Include="Areas\Admin\Controllers\HomeAdminController.cs" />
     <Compile Include="Areas\Admin\Controllers\ListProesController.cs" />
     <Compile Include="Areas\Admin\Controllers\LoginController.cs" />
     <Compile Include="Areas\Admin\Controllers\newsController.cs" />
@@ -365,6 +365,7 @@
     <Content Include="Images\Fotolia_63740782_Subscription_Monthly_M.jpg" />
     <Content Include="Images\Fotolia_77541828_Subscription_Monthly_M.jpg" />
     <Content Include="Images\fr.png" />
+    <Content Include="Images\front.min.css" />
     <Content Include="Images\frontend.css" />
     <Content Include="Images\hrs-2.jpg" />
     <Content Include="Images\hrs_logo_neu.jpg" />
@@ -515,11 +516,13 @@
     <Content Include="Areas\Admin\Views\ListProes\Delete.cshtml" />
     <Content Include="Areas\Admin\Views\ListProes\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\ListProes\Index.cshtml" />
-    <Content Include="Areas\Admin\Views\Home\Index.cshtml" />
     <Content Include="Areas\Admin\Views\news\Create.cshtml" />
     <Content Include="Areas\Admin\Views\news\Delete.cshtml" />
     <Content Include="Areas\Admin\Views\news\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\news\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\HomeAdmin\Index.cshtml" />
+    <Content Include="Images\comment-reply.min.js.tải xuống" />
+    <Content Include="Images\front.min.js.tải xuống" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />

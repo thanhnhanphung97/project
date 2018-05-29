@@ -82,13 +82,21 @@ namespace WebApplication1.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            introduce introduce = db.introduces.Find(id);
+            news news = db.news.Find(id);
 
-            if (introduce == null)
+            if (news == null)
             {
                 return HttpNotFound();
             }
-            return View(introduce);
+            return View(news);
+        }
+
+        [HttpPost, ActionName("Index")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DetailsConfirmed(int id)
+        {
+            news news = db.news.Find(id);
+            return View(news);
         }
 
         public ActionResult Edit(int? id)
@@ -117,5 +125,8 @@ namespace WebApplication1.Controllers
             }
             return View(introduce);
         }
+    
+
     }
+
 }

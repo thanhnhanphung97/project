@@ -46,7 +46,7 @@ namespace WebApplication1.Areas.Admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "id,name,imgmota,describe,link")] news news)
+        public ActionResult Create([Bind(Include = "id,name,img,describe,link")] news news)
         {
             if (ModelState.IsValid)
             {
@@ -78,7 +78,7 @@ namespace WebApplication1.Areas.Admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "id,name,imgmota,describe,link")] news news)
+        public ActionResult Edit([Bind(Include = "id,name,img,describe,link")] news news)
         {
             if (ModelState.IsValid)
             {

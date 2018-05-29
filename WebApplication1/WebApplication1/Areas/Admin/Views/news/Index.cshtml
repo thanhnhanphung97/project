@@ -16,7 +16,7 @@
             <div style="width: 150px;">@Html.DisplayNameFor(model => model.name)</div>
         </th>
         <th>
-            <div style="width: 200px;">@Html.DisplayNameFor(model => model.imgmota)</div>
+            <div style="width: 200px;">@Html.DisplayNameFor(model => model.img)</div>
         </th>
         <th >
             <div style="width: 400px;">@Html.DisplayNameFor(model => model.describe)</div>
@@ -34,7 +34,7 @@
         </td>
         <td>
             <div style="width: 200px;">
-                @{ String img = "/Images/" + item.imgmota;}
+                @{ String img = "/Images/" + item.img;}
                 <img src=@img alt="" style=" width:180px; height:90px;" />
             </div>
         </td>

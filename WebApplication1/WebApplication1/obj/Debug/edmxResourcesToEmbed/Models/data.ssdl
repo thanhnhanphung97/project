@@ -42,10 +42,9 @@
       <PropertyRef Name="id" />
     </Key>
     <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="name" Type="nvarchar" MaxLength="100" />
-    <Property Name="imgmota" Type="nvarchar" MaxLength="100" />
-    <Property Name="imgchitiet" Type="nvarchar" MaxLength="100" />
-    <Property Name="describe" Type="nvarchar" MaxLength="500" />
+    <Property Name="name" Type="nvarchar" MaxLength="200" />
+    <Property Name="img" Type="nvarchar" MaxLength="100" />
+    <Property Name="describe" Type="nvarchar" MaxLength="3000" />
     <Property Name="link" Type="nvarchar" MaxLength="200" />
   </EntityType>
   <EntityType Name="partners">

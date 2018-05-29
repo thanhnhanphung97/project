@@ -1,28 +1,74 @@
 ﻿@model IEnumerable<WebApplication1.Models.introduce>
+@using WebApplication1.Models;
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
 
 <div>
+    <h2 style="text-align:center;margin-bottom:100px;">ITELYA introduces itself.</h2>
+    <p style="text-align:center;margin-bottom:100px;margin-top:50px;color:dimgray;font-size:20px;">itelya creates a whole new world for travel expenses. With smart.billing – a purely cloud-based software – the company facilitates services according to international standards.</p>
     @foreach (var item in Model)
     {
-        String color = "text-align:center;" + "background-color:" + item.color + ";";
-    <div style=@color>
-        <div>
-            @{String img = "/Images/" + item.img;}
-            <img src=@img alt="" />
-        </div>
-        <div style="color:white;">
-            <div style="font-size:60px;font-weight:bold;">
-                @item.data<br />
+        String color = "text-align:center;" + "background-color:" + item.color + ";float:left;height:300px;width:400px;";
+        <div style=@color>
+            <div style="margin-top:30px;">
+                @{String img = "/Images/" + item.img;}
+                <img src=@img alt="" height="140" width="140" />
             </div>
-            <div style="font-size:20px;">
-                @item.describe
+            <div style="color:white;">
+                <div style="font-size:60px;font-weight:bold;">
+                    @item.data<br />
+                </div>
+                <div style="font-size:20px;">
+                    @item.describe
+                </div>
             </div>
         </div>
-        @Html.ActionLink("Edit", "Edit", new { id = item.id }) |
-        @Html.ActionLink("Details", "Details", new { id = item.id }) |
-        @Html.ActionLink("Delete", "Delete", new { id = item.id })
-    </div>
     }
 </div>
+    <br/>
+<div style="margin-top:500px;margin-bottom:50px;height:500px;width:1700px;margin-left:-200px;">
+    <h2 style="text-align:center;margin-bottom:100px;margin-left:-200px;">NEWS</h2>
+    @{
+        dataEntities db = new dataEntities();
+        int num = 0;
+        foreach (var item in db.news)
+        {
+
+            if (num++ == 4)
+            { break; }
+            <div style="float:left;height:500px;width:350px;margin-right:40px;">
+                <div>
+                    @{String img = "/Images/" + item.img;
+                        String link = "Details/" + item.id;
+                        }
+                    <a href=@link><img src=@img alt="" height="250" width="350" /></a>
+                </div>
+                <div style="margin-top:25px;margin-bottom:15px;">
+                    <a href=@link style="font-weight:bold;color:black;font-size:20px;">@item.name</a>
+                        <br />
+                </div>
+                <div style="font-size:16px;color:dimgrey;   ">
+                    @{
+                        string s = item.describe;
+                        int size = Math.Min(s.Length, 200);
+                        for (int i = 0; i < size; i++)
+                        {
+                            @Html.DisplayFor(modelItem => s[i]);
+                        }
+                        if (s.Length > 200)
+                        {
+                            string dot = "...";
+                            @Html.DisplayFor(modelItem => dot);
+                        }
+                    }
+
+                </div>
+                <div>
+                    @Html.ActionLink("read more", "Details", new { id = item.id })
+                </div>
+            </div>
+        }
+     }
+</div>
+<div style="margin-top:1000px;margin-top:50px;">SEE ALL NEWS</div>
