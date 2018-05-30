@@ -164,6 +164,7 @@
     <Compile Include="Areas\Admin\Controllers\ListProesController.cs" />
     <Compile Include="Areas\Admin\Controllers\LoginController.cs" />
     <Compile Include="Areas\Admin\Controllers\newsAdminController.cs" />
+    <Compile Include="Areas\Admin\Controllers\PartnerAdminController.cs" />
     <Compile Include="Areas\Admin\Controllers\ProductsController.cs" />
     <Compile Include="Areas\Admin\Models\LoginModel.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -202,7 +203,6 @@
     <Compile Include="Models\partner.cs">
       <DependentUpon>data.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Partners.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -336,6 +336,7 @@
     <Content Include="Content\Site.css" />
     <Content Include="Images\09_corpcards_christopher-hecht-2.jpg" />
     <Content Include="Images\168308824.jpg" />
+    <Content Include="Images\169609484.jpg" />
     <Content Include="Images\9JubX7DwOsA.html" />
     <Content Include="Images\accounting.png" />
     <Content Include="Images\airbnb-1.png" />
@@ -386,6 +387,8 @@
     <Content Include="Images\shortcodes_responsive.css" />
     <Content Include="Images\sleep.jpg" />
     <Content Include="Images\smartbilling-1.png" />
+    <Content Include="Images\smartbilling-s-333.png" />
+    <Content Include="Images\smartbilling-s.png" />
     <Content Include="Images\smartbilling.css" />
     <Content Include="Images\style%281%29.css" />
     <Content Include="Images\style%282%29.css" />
@@ -585,6 +588,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\Admin\Views\PartnerAdmin\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

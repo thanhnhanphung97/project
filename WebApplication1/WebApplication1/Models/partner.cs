@@ -26,6 +26,8 @@ public partial class partner
 
     public string describe { get; set; }
 
+    public string background { get; set; }
+
 }
 
 }

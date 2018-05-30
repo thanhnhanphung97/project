@@ -60,6 +60,7 @@
           <Property Name="name" Type="nvarchar" MaxLength="100" />
           <Property Name="img" Type="nvarchar" MaxLength="100" />
           <Property Name="describe" Type="nvarchar" MaxLength="500" />
+          <Property Name="background" Type="nvarchar" MaxLength="100" />
         </EntityType>
         <EntityType Name="Products">
           <Key>
@@ -128,6 +129,7 @@
           <Property Name="name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="img" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="describe" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="background" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="Product">
           <Key>
@@ -223,6 +225,7 @@
           <EntitySetMapping Name="partners">
             <EntityTypeMapping TypeName="dataModel.partner">
               <MappingFragment StoreEntitySet="partners">
+                <ScalarProperty Name="background" ColumnName="background" />
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="name" ColumnName="name" />
                 <ScalarProperty Name="img" ColumnName="img" />

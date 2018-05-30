@@ -41,10 +41,9 @@ namespace WebApplication1.Areas.Admin.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Create(introduce new_introduce)
         {
-            try
-            {
                 if (ModelState.IsValid)
                 {
                     db.introduces.Add(new_introduce);
@@ -56,11 +55,6 @@ namespace WebApplication1.Areas.Admin.Controllers
                 {
                     return View(new_introduce);
                 }
-            }
-            catch
-            {
-                return View();
-            }
         }
 
         public ActionResult Delete(int? id)
