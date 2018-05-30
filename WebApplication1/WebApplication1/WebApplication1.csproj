@@ -164,7 +164,7 @@
     <Compile Include="Areas\Admin\Controllers\ListProesController.cs" />
     <Compile Include="Areas\Admin\Controllers\LoginController.cs" />
     <Compile Include="Areas\Admin\Controllers\newsAdminController.cs" />
-    <Compile Include="Areas\Admin\Controllers\PartnerAdminController.cs" />
+    <Compile Include="Areas\Admin\Controllers\partnerAdminController.cs" />
     <Compile Include="Areas\Admin\Controllers\ProductsController.cs" />
     <Compile Include="Areas\Admin\Models\LoginModel.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -396,7 +396,11 @@
     <Content Include="Images\style%284%29.css" />
     <Content Include="Images\style.css" />
     <Content Include="Images\styles.css" />
+    <Content Include="Images\travel-blue.jpg" />
     <Content Include="Images\travel-expense.png" />
+    <Content Include="Images\travel-green.jpg" />
+    <Content Include="Images\travel-purple.jpg" />
+    <Content Include="Images\travel-yellow.jpg" />
     <Content Include="Images\travelport-1.png" />
     <Content Include="Images\travelport-2.png" />
     <Content Include="Images\vac-reclaim2.png" />
@@ -542,6 +546,11 @@
     <Content Include="Areas\Admin\Views\IntroducesAdmin\Details.cshtml" />
     <Content Include="Areas\Admin\Views\IntroducesAdmin\Create.cshtml" />
     <Content Include="Areas\Admin\Views\newsAdmin\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\partnerAdmin\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\partnerAdmin\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\partnerAdmin\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\partnerAdmin\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\partnerAdmin\Details.cshtml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -588,7 +597,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Areas\Admin\Views\PartnerAdmin\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

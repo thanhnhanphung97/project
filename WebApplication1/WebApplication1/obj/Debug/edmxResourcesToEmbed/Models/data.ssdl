@@ -55,6 +55,7 @@
     <Property Name="name" Type="nvarchar" MaxLength="100" />
     <Property Name="img" Type="nvarchar" MaxLength="100" />
     <Property Name="describe" Type="nvarchar" MaxLength="500" />
+    <Property Name="background" Type="nvarchar" MaxLength="100" />
   </EntityType>
   <EntityType Name="Products">
     <Key>

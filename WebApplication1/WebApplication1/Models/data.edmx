@@ -121,16 +121,6 @@
           <Property Name="doc" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
           <NavigationProperty Name="Product" Relationship="Self.FK_ListPro_Products" FromRole="ListPro" ToRole="Products" />
         </EntityType>
-        <EntityType Name="partner">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="img" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="describe" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
-          <Property Name="background" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-        </EntityType>
         <EntityType Name="Product">
           <Key>
             <PropertyRef Name="id" />
@@ -157,7 +147,6 @@
         <EntityContainer Name="dataEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="contacts" EntityType="Self.contact" />
           <EntitySet Name="ListProes" EntityType="Self.ListPro" />
-          <EntitySet Name="partners" EntityType="Self.partner" />
           <EntitySet Name="Products" EntityType="Self.Product" />
           <AssociationSet Name="FK_ListPro_Products" Association="Self.FK_ListPro_Products">
             <End Role="Products" EntitySet="Products" />
@@ -166,6 +155,7 @@
           <EntitySet Name="introduces" EntityType="dataModel.introduce" />
           <EntitySet Name="Accounts" EntityType="dataModel.Account" />
           <EntitySet Name="news" EntityType="dataModel.news" />
+          <EntitySet Name="partners" EntityType="dataModel.partner" />
         </EntityContainer>
         <EntityType Name="introduce">
           <Key>
@@ -195,6 +185,16 @@
           <Property Name="describe" Type="String" MaxLength="3000" FixedLength="false" Unicode="true" />
           <Property Name="link" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
         </EntityType>
+        <EntityType Name="partner">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="img" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="describe" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="background" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -219,17 +219,6 @@
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="idList" ColumnName="idList" />
                 <ScalarProperty Name="doc" ColumnName="doc" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="partners">
-            <EntityTypeMapping TypeName="dataModel.partner">
-              <MappingFragment StoreEntitySet="partners">
-                <ScalarProperty Name="background" ColumnName="background" />
-                <ScalarProperty Name="id" ColumnName="id" />
-                <ScalarProperty Name="name" ColumnName="name" />
-                <ScalarProperty Name="img" ColumnName="img" />
-                <ScalarProperty Name="describe" ColumnName="describe" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -268,6 +257,17 @@
             <EntityTypeMapping TypeName="dataModel.news">
               <MappingFragment StoreEntitySet="news">
                 <ScalarProperty Name="link" ColumnName="link" />
+                <ScalarProperty Name="describe" ColumnName="describe" />
+                <ScalarProperty Name="img" ColumnName="img" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="partners">
+            <EntityTypeMapping TypeName="dataModel.partner">
+              <MappingFragment StoreEntitySet="partners">
+                <ScalarProperty Name="background" ColumnName="background" />
                 <ScalarProperty Name="describe" ColumnName="describe" />
                 <ScalarProperty Name="img" ColumnName="img" />
                 <ScalarProperty Name="name" ColumnName="name" />

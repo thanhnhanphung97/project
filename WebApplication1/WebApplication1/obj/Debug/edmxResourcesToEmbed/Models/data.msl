@@ -22,16 +22,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="partners">
-      <EntityTypeMapping TypeName="dataModel.partner">
-        <MappingFragment StoreEntitySet="partners">
-          <ScalarProperty Name="id" ColumnName="id" />
-          <ScalarProperty Name="name" ColumnName="name" />
-          <ScalarProperty Name="img" ColumnName="img" />
-          <ScalarProperty Name="describe" ColumnName="describe" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="Products">
       <EntityTypeMapping TypeName="dataModel.Product">
         <MappingFragment StoreEntitySet="Products">
@@ -67,6 +57,17 @@
       <EntityTypeMapping TypeName="dataModel.news">
         <MappingFragment StoreEntitySet="news">
           <ScalarProperty Name="link" ColumnName="link" />
+          <ScalarProperty Name="describe" ColumnName="describe" />
+          <ScalarProperty Name="img" ColumnName="img" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="partners">
+      <EntityTypeMapping TypeName="dataModel.partner">
+        <MappingFragment StoreEntitySet="partners">
+          <ScalarProperty Name="background" ColumnName="background" />
           <ScalarProperty Name="describe" ColumnName="describe" />
           <ScalarProperty Name="img" ColumnName="img" />
           <ScalarProperty Name="name" ColumnName="name" />

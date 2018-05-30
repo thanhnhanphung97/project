@@ -7,12 +7,12 @@
       <Diagram DiagramId="517095d667844b29bc1835c69e5c6649" Name="Diagram1">
         <EntityTypeShape EntityType="dataModel.contact" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
         <EntityTypeShape EntityType="dataModel.ListPro" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="dataModel.partner" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="dataModel.Product" Width="1.5" PointX="0.75" PointY="0.875" IsExpanded="true" />
         <AssociationConnector Association="dataModel.FK_ListPro_Products" ManuallyRouted="false" />
         <EntityTypeShape EntityType="dataModel.introduce" Width="1.5" PointX="2.75" PointY="3.75" IsExpanded="true" />
         <EntityTypeShape EntityType="dataModel.Account" Width="1.5" PointX="0.75" PointY="6.75" />
         <EntityTypeShape EntityType="dataModel.news" Width="1.5" PointX="5.375" PointY="3.75" />
+        <EntityTypeShape EntityType="dataModel.partner" Width="1.5" PointX="5.375" PointY="0.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
