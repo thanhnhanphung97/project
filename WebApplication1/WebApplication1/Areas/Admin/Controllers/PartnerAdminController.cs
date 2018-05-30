@@ -42,7 +42,7 @@ namespace WebApplication1.Areas.Admin.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(partner partner)
+        public ActionResult Create([Bind(Include = "id,name,img,describe,background")]partner partner)
         {
             if (ModelState.IsValid)
             {

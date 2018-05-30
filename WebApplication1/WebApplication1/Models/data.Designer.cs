@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'C:\Program Files\Microsoft SQL Server\MSSQL12.MSSQLSERVER\MSSQL\DATA\SB-Test\WebApplication1\WebApplication1\Models\data.edmx'. 
+﻿// T4 code generation is enabled for model 'C:\Program Files\Microsoft SQL Server\MSSQL12.MSSQLSERVER\MSSQL\DATA\project\WebApplication1\WebApplication1\Models\data.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

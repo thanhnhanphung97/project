@@ -169,6 +169,7 @@
     <Compile Include="Areas\Admin\Models\LoginModel.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\newsController.cs" />
+    <Compile Include="Controllers\partnerController.cs" />
     <Compile Include="Models\Account.cs">
       <DependentUpon>data.tt</DependentUpon>
     </Compile>
@@ -548,9 +549,9 @@
     <Content Include="Areas\Admin\Views\newsAdmin\Details.cshtml" />
     <Content Include="Areas\Admin\Views\partnerAdmin\Index.cshtml" />
     <Content Include="Areas\Admin\Views\partnerAdmin\Create.cshtml" />
-    <Content Include="Areas\Admin\Views\partnerAdmin\Delete.cshtml" />
     <Content Include="Areas\Admin\Views\partnerAdmin\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\partnerAdmin\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\partnerAdmin\Delete.cshtml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -594,6 +595,7 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\Details.cshtml" />
     <Content Include="Views\news\Index.cshtml" />
+    <Content Include="Views\partner\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
