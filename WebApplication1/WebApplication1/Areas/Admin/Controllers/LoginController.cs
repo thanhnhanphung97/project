@@ -12,6 +12,7 @@ namespace WebApplication1.Areas.Admin.Controllers
 {
     public class LoginController : Controller
     {
+        
         dataEntities db = new dataEntities();
         // GET: Admin/Home
         [HttpGet]
@@ -27,8 +28,7 @@ namespace WebApplication1.Areas.Admin.Controllers
             if(result && ModelState.IsValid)
             {
                 SessionHelper.SetSession(new UserSession() { UserName = model.UserName });
-                //return View("~/View/Home/Index.cshtml");
-                return RedirectToAction("Index", "Home");
+                Response.Redirect("~/HomeAdmin/Index");
             }
             else
             {
@@ -36,7 +36,6 @@ namespace WebApplication1.Areas.Admin.Controllers
             }
             return View(model);
         }
-        
 
     }
 }
