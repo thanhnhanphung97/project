@@ -3,11 +3,6 @@
     ViewBag.Title = "Index";
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
-@{
-      if (Session["un"] == null)
-      {
-        Response.Redirect("/Admin/Login");
-      }
-}
+
 <h2> Đây là trang Home Admin</h2>
 <h2> @ViewBag.Text</h2>

@@ -15,11 +15,11 @@ namespace WebApplication1.Areas.Admin.Code
         public static UserSession GetSession()
         {
             var session = HttpContext.Current.Session["loginSession"];
-            
             if (session == null)
                 return null;
             else
                 return session as UserSession;
+               
         }
     }
 }

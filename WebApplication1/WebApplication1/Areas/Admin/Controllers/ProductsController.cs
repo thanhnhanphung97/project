@@ -6,6 +6,7 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using WebApplication1.Areas.Admin.Code;
 using WebApplication1.Models;
 
 namespace WebApplication1.Areas.Admin.Controllers
@@ -17,6 +18,7 @@ namespace WebApplication1.Areas.Admin.Controllers
         // GET: Admin/Products
         public ActionResult Index()
         {
+            Check.Out();
             return View(db.Products.ToList());
         }
 
@@ -38,6 +40,7 @@ namespace WebApplication1.Areas.Admin.Controllers
         // GET: Admin/Products/Create
         public ActionResult Create()
         {
+            Check.Out();
             return View();
         }
 
@@ -61,6 +64,7 @@ namespace WebApplication1.Areas.Admin.Controllers
         // GET: Admin/Products/Edit/5
         public ActionResult Edit(int? id)
         {
+            Check.Out();
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -92,6 +96,7 @@ namespace WebApplication1.Areas.Admin.Controllers
         // GET: Admin/Products/Delete/5
         public ActionResult Delete(int? id)
         {
+            Check.Out();
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);

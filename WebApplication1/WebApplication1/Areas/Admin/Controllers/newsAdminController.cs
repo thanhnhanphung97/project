@@ -3,15 +3,17 @@ using System.Linq;
 using System.Net;
 using System.Web.Mvc;
 using WebApplication1.Models;
+using WebApplication1.Areas.Admin.Code;
 namespace WebApplication1.Areas.Admin.Controllers
 {
     public class newsAdminController : Controller
     {
         private dataEntities db = new dataEntities();
-
+        
         // GET: Admin/news
         public ActionResult Index()
         {
+            Check.Out();
             return View(db.news.ToList());
         }
 
@@ -33,6 +35,7 @@ namespace WebApplication1.Areas.Admin.Controllers
         // GET: Admin/news/Create
         public ActionResult Create()
         {
+            Check.Out();
             return View();
         }
 
@@ -56,6 +59,7 @@ namespace WebApplication1.Areas.Admin.Controllers
         // GET: Admin/news/Edit/5
         public ActionResult Edit(int? id)
         {
+            Check.Out();
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -87,6 +91,7 @@ namespace WebApplication1.Areas.Admin.Controllers
         // GET: Admin/news/Delete/5
         public ActionResult Delete(int? id)
         {
+            Check.Out();
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -122,6 +127,7 @@ namespace WebApplication1.Areas.Admin.Controllers
 
         public ActionResult Details(int? id)
         {
+            Check.Out();
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);

@@ -11,12 +11,15 @@ namespace WebApplication1.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.Web.Mvc;
+
     public partial class partner
     {
         public int id { get; set; }
         public string name { get; set; }
         public string img { get; set; }
+
+        [AllowHtml]
         public string describe { get; set; }
         public string background { get; set; }
     }
