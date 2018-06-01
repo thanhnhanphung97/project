@@ -4,7 +4,7 @@
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
 @{
-      if (Session["un"] == null)
+      if (Session["loginSession"] == null)
       {
         Response.Redirect("/Admin/Login");
       }
