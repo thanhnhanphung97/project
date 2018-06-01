@@ -1,4 +1,4 @@
-﻿tinyMCE.init(
-{
-    selector: "textarea"
-});
+﻿//tinyMCE.init(
+//{
+//    selector: "textarea"
+//});
