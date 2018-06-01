@@ -7,7 +7,6 @@ using System.Web.Mvc;
 using WebApplication1.Areas.Admin.Code;
 using WebApplication1.Areas.Admin.Models;
 using WebApplication1.Models;
-
 namespace WebApplication1.Areas.Admin.Controllers
 {
     public class LoginController : Controller
@@ -27,8 +26,8 @@ namespace WebApplication1.Areas.Admin.Controllers
             if(result && ModelState.IsValid)
             {
                 SessionHelper.SetSession(new UserSession() { UserName = model.UserName });
-                //return View("~/View/Home/Index.cshtml");
-                return RedirectToAction("Index", "Home");
+                Session["loginSession"] = model.UserName;
+                return RedirectToAction("Index", "HomeAdmin");
             }
             else
             {

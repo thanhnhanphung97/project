@@ -8,8 +8,10 @@ namespace WebApplication1.Areas.Admin.Models
 {
     public class LoginModel
     {
-        [Required]
+        [Required(ErrorMessage ="Nhập UserName")]
         public string UserName { set; get; }
+        [Required(ErrorMessage = "Nhập Password")]
         public string Password { set; get; }
+        
     }
 }
